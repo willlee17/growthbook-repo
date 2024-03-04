@@ -135,6 +135,8 @@ const IndexPage = () => {
         Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
         update in real-time. 😎
       </p>
+      <div>{process.env.GATSBY_GROWTHBOOK_API_HOST}</div>
+      <div>{process.env.GATSBY_GROWTHBOOK_CLIENT_KEY}</div>
       <ul style={listStyles}>
         <li style={docLinkStyle}>
           <a
