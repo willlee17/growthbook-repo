@@ -1,15 +1,23 @@
 import React from 'react'
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react'
 
+let visitor_id = localStorage.getItem("growthbook_visitor_id");
+
+if (!visitor_id) {
+  visitor_id = create_UUID();
+  localStorage.setItem('growthbook_visitor_id', visitor_id)
+}
+
 const growthbook = new GrowthBook({
   apiHost: process.env.GATSBY_GROWTHBOOK_API_HOST,
   clientKey: process.env.GATSBY_GROWTHBOOK_CLIENT_KEY,
   enableDevMode: true,
   attributes: {
+    id: visitor_id,
     url: window.location.href,
   },
   trackingCallback: (experiment, result) => {
-    console.log("Peach Hot Pot");
+    console.log("testing testing");
   },
 });
 
