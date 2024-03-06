@@ -38,7 +38,17 @@ const growthbook = new GrowthBook({
     url: window.location.href,
   },
   trackingCallback: (experiment, result) => {
-    console.log("testing testing");
+    const params = new URLSearchParams(window.location.search)
+    const version = params.get(`gb-${experiment.key}`)
+
+    if (version) return
+
+    localStorage.setItem(`growthbook_experiment_${experiment.key}`, result.key)
+
+    window.analytics.track('Experiment Viewed', {
+      experimentId: experiment.key,
+      variationId: result.key
+    })
   },
 });
 
