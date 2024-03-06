@@ -7,6 +7,7 @@ import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react'
 //     script.async = true
 
 //     script.setAttribute('data-client-key', process.env.GATSBY_GROWTHBOOK_CLIENT_KEY)
+//     script.setAttribute('data-api-host', process.env.GATSBY_GROWTHBOOK_API_HOST)
   
 //     document.head.appendChild(script)
 // }
