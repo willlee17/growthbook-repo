@@ -1,17 +1,15 @@
 import React from 'react'
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react'
 
-const addScript = (url) => {
-    let script = document.createElement('script')
-    script.src = url
-    script.async = true
+// export const onClientEntry = () => {
+//     let script = document.createElement('script')
+//     script.src = "https://cdn.jsdelivr.net/npm/@growthbook/growthbook/dist/bundles/auto.min.js"
+//     script.async = true
 
-    script.setAttribute('data-client-key', process.env.GATSBY_GROWTHBOOK_CLIENT_KEY)
+//     script.setAttribute('data-client-key', process.env.GATSBY_GROWTHBOOK_CLIENT_KEY)
   
-    document.body.appendChild(script)
-}
-
-addScript("https://cdn.jsdelivr.net/npm/@growthbook/growthbook/dist/bundles/auto.min.js")
+//     document.head.appendChild(script)
+// }
 
 const create_UUID = () => {
     let dt = new Date().getTime();

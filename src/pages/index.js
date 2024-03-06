@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react"
+import useExperiment from "../utils"
 
 const pageStyles = {
   color: "#232129",
@@ -124,6 +125,13 @@ const links = [
 ]
 
 const IndexPage = () => {
+  const { value } = useExperiment({
+    key: 'mock-test-kelsey',
+    variations: ['A', 'B']
+  })
+  
+  console.log('value: ', value)
+  
   return (
     <main style={pageStyles}>
       <h1 style={headingStyles}>
